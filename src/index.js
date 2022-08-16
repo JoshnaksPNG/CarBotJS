@@ -4,7 +4,7 @@ const {Readline, ReadlineParser} = require("@serialport/parser-readline");
 const Math = require("math.js");
 const fs = require("fs");
 
-const TOKEN = "";
+const TOKEN = JSON.parse(fs.readFileSync("./src/config.json")).token;
 
 const port = new SerialPort({ path: "COM3", baudRate: 9600 });
 
@@ -31,6 +31,7 @@ const bot = new Client
 bot.on("ready", () =>
 {
     console.log("Discord Bot Ready");
+    port.write("~");
 });
 
 bot.on("messageCreate", (msg) =>

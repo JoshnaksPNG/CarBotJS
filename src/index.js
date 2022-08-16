@@ -99,12 +99,73 @@ bot.on("messageCreate", (msg) =>
             case "backward":
                 drive_back();
                 break;
+
+            //Drive Short Left
+            case "sl":
+                drive_sleft();
+                break;
+
+            case "6":
+                drive_sleft();
+                break;
+
+            case "sleft":
+                drive_sleft();
+                break;
+
+            //Drive Short Right
+            case "sr":
+                drive_sright();
+                break;
+
+            case "7":
+                drive_sright();
+                break;
+
+            case "sright":
+                drive_sright();
+                break;
+
+            //Drive Short Foreward 4
+            case "sf":
+                drive_sfore();
+                break;
+
+            case "4":
+                drive_sfore();
+                break;
+
+            case "sfore":
+                drive_sfore();
+                break;
+
+            case "sforeward":
+                drive_sfore();
+                break;
+
+            //Drive Short Backward 5
+            case "sb":
+                drive_sback();
+                break;
+
+            case "5":
+                drive_sback();
+                break;
+
+            case "sback":
+                drive_sback();
+                break;
+
+            case "sbackward":
+                drive_sback();
+                break;
         }
     }
 });
 
 bot.login(TOKEN);
 
+//Drive Functions
 function drive_left()
 {
     //id 2
@@ -127,4 +188,29 @@ function drive_back()
 {
     //id 1
     port.write("1");
+}
+
+//Short Drive Functions
+function drive_sleft()
+{
+    //id 6
+    port.write("6");
+}
+
+function drive_sright()
+{
+    //id 7
+    port.write("7");
+}
+
+function drive_sfore()
+{
+    //id 4
+    port.write("4");
+}
+
+function drive_sback()
+{
+    //id 5
+    port.write("5");
 }

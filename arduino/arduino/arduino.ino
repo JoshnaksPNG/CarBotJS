@@ -6,6 +6,9 @@
 #define IN3 9
 #define IN4 11
 
+//Define Drive Variables
+#define DRIVETIME 250
+
 
 // Setup Function
 void setup() 
@@ -123,7 +126,7 @@ void drive_left(int drive_length)
   digitalWrite(IN4, HIGH);
 
   // Continue for 500ms * Drive Length ( 1 or 2 )
-  delay(500 * drive_length);
+  delay(DRIVETIME * drive_length);
 
   // Shut Off Wheels
   digitalWrite(ENA, LOW);
@@ -147,7 +150,7 @@ void drive_right(int drive_length)
   digitalWrite(IN4, LOW);
 
   // Continue for 500ms * Drive Length ( 1 or 2 )
-  delay(500 * drive_length);
+  delay(DRIVETIME * drive_length);
 
   // Shut Off Wheels
   digitalWrite(ENA, LOW);
@@ -171,7 +174,7 @@ void drive_fore(int drive_length)
   digitalWrite(IN4, HIGH);
 
   // Continue for 500ms * Drive Length ( 1 or 2 )
-  delay(500 * drive_length);
+  delay(DRIVETIME * drive_length);
 
   // Shut Off Wheels
   digitalWrite(ENA, LOW);
@@ -195,7 +198,7 @@ void drive_back(int drive_length)
   digitalWrite(IN4, LOW);
 
   // Continue for 500ms * Drive Length ( 1 or 2 )
-  delay(500 * drive_length);
+  delay(DRIVETIME * drive_length);
 
   // Shut Off Wheels
   digitalWrite(ENA, LOW);

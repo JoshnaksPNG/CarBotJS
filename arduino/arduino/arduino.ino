@@ -14,15 +14,15 @@
 void setup() 
 {
   // Serial Setup
-  Serial.begin(9600);
+  Serial1.begin(9600);
 
   // Wait For Serial Connection
-  while(!Serial)
+  while(!Serial1)
   {
     ;
   }
 
-  Serial.println("Serial Connection Ready");
+  Serial1.println("Serial Connection Ready");
 
   //Pin Setups
   pinMode(ENA, OUTPUT);
@@ -37,19 +37,19 @@ void setup()
 void loop() 
 {
   // Serial Responses
-  if (Serial.available() > 0)
+  if (Serial1.available() > 0)
   {
-    char incoming = Serial.read();
+    char incoming = Serial1.read();
 
     if(incoming == '~')
     {
       // Node Program Turn On
-      Serial.println("Serial Connection Ready");
+      Serial1.println("Serial Connection Ready");
     } else
     {
       // Recieving Serial Data
-      Serial.print("Recieved: ");
-      Serial.println(incoming);
+      Serial1.print("Recieved: ");
+      Serial1.println(incoming);
 
       // Set Drive Variables
       int drive_code = incoming - '0';
@@ -104,7 +104,7 @@ void loop()
         }
       } else
       {
-        Serial.println("Unuseable Drive Code");
+        Serial1.println("Unuseable Drive Code");
       }
     }
   }

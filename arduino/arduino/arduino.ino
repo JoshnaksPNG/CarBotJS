@@ -9,6 +9,23 @@
 //Define Drive Variables
 #define DRIVETIME 250
 
+//Check Board Type
+//Uno or Older
+#if defined(__AVR_ATmega328P__) || defined(__AVR_ATmega168__)
+
+//Code in here will only be compiled if an Arduino Uno (or older) is used.
+#define SER_LIB Serial
+
+#endif
+
+//Leonardo
+#if defined(__AVR_ATmega32U4__) || defined(__AVR_ATmega16U4__)
+
+//Code in here will only be compiled if an Arduino Leonardo is used.
+#define SER_LIB Serial1
+
+#endif
+
 
 // Setup Function
 void setup() 

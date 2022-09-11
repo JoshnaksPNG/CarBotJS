@@ -6,7 +6,7 @@ const fs = require("fs");
 
 const TOKEN = JSON.parse(fs.readFileSync("./src/config.json")).token;
 
-const port = new SerialPort({ path: "COM5", baudRate: 9600 });
+const port = new SerialPort({ path: "COM3", baudRate: 9600 });
 
 const parser = new ReadlineParser();
 port.pipe(parser);
